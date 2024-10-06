@@ -1,0 +1,72 @@
+
+
+@{
+    ViewData["Title"] = "Example";
+}
+
+@*burayı çalıştırmak için gereken baseURL/example/index *@
+<h1>Hi, guys! Example </h1>
+
+@{
+    var name = ViewBag.name;
+    <p>@name</p>
+}
+<p>@name</p>
+<p>@ViewBag.name</p>
+<br />
+<p>Yaş: @ViewData["age"]</p>
+
+
+<h3>Courses</h3>
+@foreach (var item in ViewData["Courses"] as List<string>)
+{
+    <p>@item</p>
+}
+
+<p>Id - @ViewBag.person.Id Name: @ViewBag.person.Name Age: @ViewBag.person.Age</p>
+
+<hr />
+
+@using MyAspNetCoreFirstApp.Controllers;
+
+@model List<ProductList>
+<h3>Product list</h3>
+@foreach (var item in Model)
+{
+    <p>@item.productId - @item.productName </p>
+}
+
+<hr />
+<p>Razor syntax göre if else, for, foreach kulllanım örneği:</p>
+@{
+    var items = new List<string> { "Item1", "Item2", "Item3" };
+    int count = items.Count;
+}
+
+<!-- For Döngüsü -->
+<ul>
+    @for (int i = 0; i < count; i++)
+    {
+        <li>@items[i]</li>
+    }
+</ul>
+
+<!-- Foreach Döngüsü -->
+<ul>
+    @foreach (var item in items)
+    {
+        <li>@item</li>
+    }
+</ul>
+
+<!-- If-Else Koşulu -->
+<p>
+    @if (count > 0)
+    {
+        <strong>@count adet öğe listelendi.</strong> 
+   }
+    else
+    {
+      <strong>Liste boş</strong>
+    }
+</p>

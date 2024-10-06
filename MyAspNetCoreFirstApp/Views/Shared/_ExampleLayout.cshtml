@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        My header
+    </header>
+    @*eğer bu kısmı kullanırsan render section async kullanıldığında section header ile örneğin eklenen kısım buraya eklenir.
+    farklı sayfalardaki özelleştirmeyi sağlar.*@ 
+    @await RenderSectionAsync("header", required: false)
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        My footer
+    </footer>
+    @await RenderSectionAsync("footer", required: false)
+</body>
+</html>
+

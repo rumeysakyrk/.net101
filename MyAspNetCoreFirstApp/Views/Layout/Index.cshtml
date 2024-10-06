@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Example";
+    Layout = "_ExampleLayout";
+}
+
+@*/layout/index url ile çağrıldığında kendi oluşturduğumuz hazır layout dışında bir layout çalışır.
+buna ek olarak eğer layout değeri olmadan bir sayfa oluşturacaksak Layout=null; olarak berlitmek yeterlidir.*@ 
+@section header{
+
+    <p>RenderSectionAsync ile eklenen header kısmı</p>
+
+}
+<h1>Example Layout </h1>
+@section footer{
+
+
+<p>
+    Render section async ile kelnmiş footer kısmı
+</p>
+}
